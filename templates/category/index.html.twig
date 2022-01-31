@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">     
+        <div class="col-12 my-5 col-md-8 offset-md-2 border border-2 border-warning  px-5 palegoldenrod">
+            <h1 class="text-center text-primary my-5 py-3 uppercase" id="titlecat">Catégorie :  {{ category.name }}</h1>
+  	        {% for stuff in stuffs %}
+                <h2 class="text-center text-white mb-4">  {{ stuff.name }}</h2></center>
+                <div class="text-center mb-4"> <img src="{{ asset('/img/'~ stuff.pictureFilename) }}" class="img-fluid border border-2 border-warning rounded"></div>		       
+		        <div class="text-white mb-4"> {{ stuff.description |raw}}</div>
+		       <div class="text-white mb-4"><strong>Nombre de points </strong> : {{ category.catPoints }}  </div>
+		        <div class= "mb-3"> <strong>Propriétaire  : <span class= "navy"> {{ stuff.owner }}</span></strong>  </div>
+                <div  class="mt-4 mb-5"> <a href="/stuff/{{ stuff.id }}"><button type="button" class="btn btn-success text-white">Réservation</button></a></div>
+               <div class="text-center mb-5"> <a href="{{path('index') }}"><button type="button" class="btn btn-primary text-white">Accueil</button></a></div>
+                <hr class="mb-5" style="height:3px" color="gold" />  
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

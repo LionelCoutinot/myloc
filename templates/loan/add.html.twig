@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réservation de l'outil {% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 my-5 col-md-8 offset-md-2 border border-2 border-warning rounded px-5 palegoldenrod">
+                <h1 class="text-center text-primary my-5 py-3 uppercase" id="titlecat">Réservation !</h1>
+	            {% for message in app.flashes('notice') %}
+                    <div class="flash-notice text-center text-success mb-4">
+                        <strong> {{ message }}</strong>
+                    </div>
+                {% endfor %}
+                <div class="text-white">
+                    <div class="mb-3"><p> Votre Pseudo : <strong class="text-success">{{ app.user.pseudo }}</strong></p></div>
+                    <div class="mb-3"><p> Outil à réserver : <strong>{{ stuff.name }}</strong> </div>  
+                        {% form_theme form 'bootstrap_5_layout.html.twig' %}    
+                         {{ form_start(form) }} 
+			                <div class="mb-4"> {{ form_row(form.start) }}</div>
+                            <div class="mb-5"> {{ form_row(form.end) }}</div>
+                            <div class="my-4"> {{form_row(form.submit, { 'label': 'Enregistrer' }) }}</div>
+                        {{ form_end(form) }} 
+                </div>
+            </div>
+        </div>
+        <div class="text-center mb-5"> <a href="{{path('index') }}"><button type="button" class="btn btn-primary text-white">Accueil</button></a></div>
+    </div>
+</div>
+{% endblock %}

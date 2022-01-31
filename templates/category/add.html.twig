@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une nouvelle catégorie{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 my-5 col-md-6 offset-md-3 border border-2 border-warning  px-5 text-primary palegoldenrod">
+           <div class="text-center">
+                <h1 class="uppercase py-3 my-5">Ajouter une nouvelle catégorie!</h1>
+			    {% for message in app.flashes('notice') %}
+                    <div class="flash-notice text-success mb-4">
+                        <strong> {{ message }}</strong>
+                    </div>                    
+                 {% endfor %}
+            </div>
+            {% form_theme form 'bootstrap_5_layout.html.twig' %}    
+            {{ form_start(form) }} 
+			    <div class="text-white mb-4"> {{ form_row(form.name) }}</div>
+                <div class="text-white mb-4"> {{ form_row(form.catPoints) }}</div>
+                <div class="my-4"> {{form_row(form.submit, { 'label': 'Enregistrer Catégorie' }) }}</div>
+                {{ form_end(form) }} 
+		
+			<div class="text-center my-5"> <a href="{{path('product_add') }}"><button type="button" class="btn btn-primary text-white">Retour Ajout outil</button></a></div>
+		
+        </div>
+     </div>
+</div>
+{% endblock %}

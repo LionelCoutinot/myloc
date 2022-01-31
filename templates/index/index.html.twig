@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Outils à louer{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="text-center text-primary mt-5 mb-4">
+            (en collaboration avec <strong class="text-danger">Emmanuel Audonnet</strong> pour la partie fonctionnelle</strong>)
+        </div>
+        <div class="row border border-2 border-warning  my-5 text-primary">
+	        <div class="col-12">
+                <h1 class="text-center uppercase py-3 my-5">Outils à louer !</h1>
+			    <div class="mb-5">
+                    {% for message in app.flashes('notice') %}
+                        <div class="flash-notice mb-5 text-success">
+                            <strong>{{ message }}</strong>
+                        </div>
+                    {% endfor %}
+                </div>
+	        </div>
+            {% for stuff in stuffs %}
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card  border border-2 border-warning rounded color37">                        
+                        <div class="card-body">
+                            <div class="card-header border border-2 border-warning rounded">
+				                <h4 class="card-title text-center text-white">{{ stuff.name }}</h4>					            
+                                <div class="text-center mb-3">  <img src="{{ asset('/img/'~ stuff.pictureFilename) }}" class="oimg-fluid border border-2 border-warning rounded"></div>
+                            </div>
+                            <div class="card-body text-center">
+                                <p class="card-text">
+                                    <div><a href="/stuff/{{ stuff.id}}"><button type="button" class="btn btn-primary text-white">Détails</button></a></div> 
+                                </p>					
+				            </div>
+			            </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>     
+    </div>
+{% endblock %}

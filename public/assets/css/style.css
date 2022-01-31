@@ -1,0 +1,116 @@
+body
+{
+    font-family:  Verdana, Arial, Helvetica, sans-serif;
+    background-color:#F8F9FB;
+}
+
+.bold{
+    font-weight: bold;   
+}
+
+.white{
+    color:white;
+}
+
+.palegoldenrod {
+    background-color:#90A5B6;
+    color:white;
+    border-radius:10px; 
+}
+
+.back-nav {
+    background-color:#90A5B6;    
+}
+
+#titlenav
+{
+    font-size:30px;
+    font-weight:bold;
+}
+
+
+
+.uppercase
+{
+    text-transform:uppercase;
+    font-weight:bold;
+    background-color:#EEF3F7;     
+    border: 2px solid gold;
+    border-radius:10px; 
+    
+}
+
+a 
+{
+    text-decoration: none;
+}
+
+.card-header {
+    background-color:#90A5B6; 
+}
+
+.color37{
+    background-color:#F8F9FB;
+}
+
+.navy{
+    color:navy;
+    font-weight:bold;
+}
+
+.align-bo{
+    vertical-align:bottom;
+}
+
+/* configuration du footer en bas de la page  (body, html + bodyr + footer */
+
+html, body {
+	height: 100%;
+	margin: 0; padding: 0;
+}
+body {
+	display : table;
+	width: 100%;
+}
+footer {
+	display : table-row;
+	height: 7vh;
+}
+/*fin de  configuration du footer en bas de la page  */
+
+.mentions-style{
+    font-family: Florentine Garamond SSi;
+    font-size:18px;
+}
+
+
+/*titre entouré de  2 traits  */
+h5{
+    margin:0;
+    padding:0;
+    text-align:center;
+    position:relative;
+}
+h5 span{
+    background-color:#F8F9FB;
+    padding:0 10px;
+}
+.line{
+    line-height:30px;
+    box-shadow:0 16px 0 0 #F8F9FB inset, 0 17px 0 0 black inset;
+}
+/*  fin de titre entouré de  2 traits  */
+
+.number
+{
+    font-size:30px;
+    font-weight:bold;
+    color:green;
+    padding-right:10px;
+    padding-left:10px;
+    
+}
+
+.justify{
+    text-align:justify;
+}

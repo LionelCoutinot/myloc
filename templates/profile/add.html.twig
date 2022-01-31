@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une nouveau produit{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 my-5 col-md-6 offset-md-3 border border-2 border-warning  px-5 text-primary palegoldenrod">
+            <div class="text-center">
+                <h1 class="text-primary uppercase py-3 my-5">Ajouter un nouvel outil !</h1>
+		        {% for message in app.flashes('notice') %}
+                    <div class="flash-notice text-success mb-4">
+                        <strong> {{ message }}</strong>
+                    </div>
+                {% endfor %}
+            </div>
+            {% form_theme form 'bootstrap_5_layout.html.twig' %}    
+            {{ form_start(form) }} 
+			    <div class="text-white mb-4"> {{ form_row(form.name) }}</div>
+                <div class="text-white mb-4"> {{ form_row(form.description) }}</div>
+                <div class="text-white mb-4"> {{ form_row(form.pictureFile) }}</div>
+                <div class="text-white mb-4"> {{ form_row(form.owner) }}</div>
+                <div class="text-white mb-4"> {{ form_row(form.category) }}</div>
+                <div><a href="{{path('category_add') }}"><button type="button" class="btn btn-success text-white my-4">Ajouter une nouvelle catégorie</button></a></div> 
+                <div class="my-4"> {{form_row(form.submit, { 'label': 'Enregistrer Outil' }) }}</div>
+			{{ form_end(form) }} 
+			<div class="text-center my-5"> <a href="{{path('profile') }}"><button type="button" class="btn btn-primary text-white">Retour Profil</button></a></div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
